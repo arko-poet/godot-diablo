@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://u4wnoweg0bmu"]
+
+[ext_resource type="Script" uid="uid://bu680gvmu0hh3" path="res://scenes/menus/credits.gd" id="1_cu0al"]
+
+[node name="CreditsLayer" type="CanvasLayer" unique_id=1987280426]
+script = ExtResource("1_cu0al")
+
+[node name="UI" type="Control" parent="." unique_id=1822568967]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="UI" unique_id=556830306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="CreditsLabel" type="RichTextLabel" parent="UI" unique_id=1809193118]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]
+[font_size=64]%s[/font_size]
+
+[hr]
+
+[font_size=32]Authors[/font_size]
+[b]Game Direction:[/b] [url=https://example.com]Person A[/url]
+[b]Music & SFX:[/b] [url=https://example.com]Person B[/url]
+[b]Programming:[/b] [url=https://example.com]Person C[/url]
+
+[hr]
+
+[font_size=32]Sourced Assets[/font_size]
+[url=https://example.com]Asset 1[/url]
+[url=https://example.com]Asset 2[/url]
+
+[hr]
+
+[font_size=32]Tools[/font_size]
+[b]Project Template:[/b] [url=https://example.com]godot-tempalte by arko[/url]
+[b]Game Engine:[/b] [url=https://example.com]Godot Engine[/url]
+
+[hr]
+
+[font_size=64]Thank you for playing![/font_size]
+[/center]"
+
+[node name="ExitCreditsButton" type="Button" parent="UI" unique_id=249258513]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 62.0
+grow_vertical = 0
+text = "Return"
+
+[connection signal="pressed" from="UI/ExitCreditsButton" to="." method="_on_exit_credits_button_pressed"]

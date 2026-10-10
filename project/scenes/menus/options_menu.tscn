@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://yt0chm4uh8tb"]
+
+[ext_resource type="Script" uid="uid://ciewu4hydd8l4" path="res://scenes/menus/options_menu.gd" id="1_bp0ux"]
+
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1244393214]
+script = ExtResource("1_bp0ux")
+
+[node name="UI" type="Control" parent="." unique_id=1513808327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="UI" unique_id=628735275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="TabBar" type="TabBar" parent="UI" unique_id=761128450]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+current_tab = 0
+tab_alignment = 1
+tab_count = 3
+tab_0/title = "Video"
+tab_1/title = "Audio"
+tab_2/title = "Game"
+
+[node name="VideoSettings" type="GridContainer" parent="UI" unique_id=2123833321]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="FullScreenLabel" type="Label" parent="UI/VideoSettings" unique_id=2011996290]
+layout_mode = 2
+text = "Full Screen"
+
+[node name="FullScreenButton" type="CheckButton" parent="UI/VideoSettings" unique_id=172228360]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AudioSettings" type="GridContainer" parent="UI" unique_id=1028650506]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="MuteLabel" type="Label" parent="UI/AudioSettings" unique_id=1209602024]
+layout_mode = 2
+text = "Mute"
+
+[node name="MuteButton" type="CheckButton" parent="UI/AudioSettings" unique_id=1714952435]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GameSettings" type="GridContainer" parent="UI" unique_id=1223380960]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="AcceptOptionsButton" type="Button" parent="UI" unique_id=1342015817]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "OK"
+
+[connection signal="tab_changed" from="UI/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="pressed" from="UI/AcceptOptionsButton" to="." method="_on_accept_options_button_pressed"]
