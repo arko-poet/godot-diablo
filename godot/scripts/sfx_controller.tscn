@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6c8wnqkd62uu"]
+
+[ext_resource type="Script" uid="uid://bwgb8dsa0hkkp" path="res://scripts/sfx_controller.gd" id="1_mxomt"]
+
+[node name="SfxController" type="Node" unique_id=413573978]
+script = ExtResource("1_mxomt")

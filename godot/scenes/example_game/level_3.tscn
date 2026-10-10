@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4lyu0tkqwapp"]
+
+[ext_resource type="PackedScene" uid="uid://d1ujue4jtg46f" path="res://scenes/example_game/base_level.tscn" id="1_mhqmg"]
+
+[node name="Level3" unique_id=1441384683 instance=ExtResource("1_mhqmg")]
+required_count = 30

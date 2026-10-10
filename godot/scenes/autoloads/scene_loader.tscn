@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqjnmmwf8fpu1"]
+
+[ext_resource type="Script" uid="uid://dq32yr4ag76t3" path="res://scripts/autoloads/scene_loader.gd" id="1_3rqna"]
+[ext_resource type="PackedScene" uid="uid://d4srvn4qupje" path="res://scenes/loading_screen.tscn" id="3_wxoax"]
+
+[node name="SceneLoader" type="Node" unique_id=1042030613]
+script = ExtResource("1_3rqna")
+loading_screen_scene = ExtResource("3_wxoax")
+main_menu_scene_path = "res://scenes/menus/main_menu.tscn"

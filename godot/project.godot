@@ -1,0 +1,76 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot Template"
+config/version="0.0.0"
+run/main_scene="uid://dsdmcnxnoe7br"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://art/icons/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://resources/default_bus_layout.tres"
+
+[autoload]
+
+UiController="*uid://b0fggkygj08yj"
+Settings="*uid://ds7oicts8ev4p"
+SceneLoader="*uid://dqjnmmwf8fpu1"
+SfxController="*uid://6c8wnqkd62uu"
+MusicController="*uid://c8p7oeaechiwf"
+GameController="*uid://bjgxlm82kpnn0"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "red",
+"res://art/": "orange",
+"res://audio/": "yellow",
+"res://other_assets/": "green",
+"res://resources/": "teal",
+"res://scenes/": "blue",
+"res://scripts/": "purple",
+"res://shaders/": "pink"
+}
+
+[gui]
+
+theme/custom_font="uid://3cpmq66gpxwk"
+
+[input]
+
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":80,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

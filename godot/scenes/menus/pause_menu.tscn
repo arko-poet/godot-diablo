@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://brt4e2uh753mt"]
+
+[ext_resource type="Script" uid="uid://bga1k3snw2e52" path="res://scripts/menus/pause_menu.gd" id="1_fwndu"]
+[ext_resource type="PackedScene" uid="uid://yt0chm4uh8tb" path="res://scenes/menus/options/options_menu.tscn" id="2_7unhi"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2005489429]
+process_mode = 3
+script = ExtResource("1_fwndu")
+options_menu_scene = ExtResource("2_7unhi")
+
+[node name="UI" type="Control" parent="." unique_id=1466767445]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1043401205]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2509804)
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1032169063]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -76.0
+offset_right = 76.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer" unique_id=1374381259]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResumeButton" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=1871704783]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=1383688934]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Restart"
+
+[node name="OptionsButton" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=1959665874]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Options"
+
+[node name="MainMenuButton" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=971116180]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ExitButton" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=419870033]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="UI/PanelContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

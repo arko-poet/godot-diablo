@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b0fggkygj08yj"]
+
+[ext_resource type="Script" uid="uid://0fhhceomv1i2" path="res://scripts/autoloads/ui_controller.gd" id="1_ol88s"]
+[ext_resource type="AudioStream" uid="uid://bo333cqck4khg" path="res://audio/sfx/kenney_ui-audio/Audio/rollover2.ogg" id="2_2vy06"]
+[ext_resource type="AudioStream" uid="uid://cxur21ostjh52" path="res://audio/sfx/kenney_ui-audio/Audio/switch2.ogg" id="3_x4577"]
+
+[node name="UiController" type="Node" unique_id=1506427996]
+script = ExtResource("1_ol88s")
+_ui_hover_sound = ExtResource("2_2vy06")
+_ui_pressed_sound = ExtResource("3_x4577")

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dsdmcnxnoe7br"]
+
+[ext_resource type="Script" uid="uid://dckrafdur0rqe" path="res://scripts/menus/main_menu.gd" id="1_ovrgc"]
+[ext_resource type="PackedScene" uid="uid://yt0chm4uh8tb" path="res://scenes/menus/options/options_menu.tscn" id="2_2o76q"]
+[ext_resource type="PackedScene" uid="uid://u4wnoweg0bmu" path="res://scenes/menus/credits.tscn" id="3_2o76q"]
+[ext_resource type="AudioStream" uid="uid://dnpgogajdiigx" path="res://audio/music/template/Classicals.de - Chopin - Ballade no. 1, Op. 23.mp3" id="5_imvie"]
+
+[node name="MainMenu" type="Node" unique_id=939735052]
+script = ExtResource("1_ovrgc")
+options_menu_scene = ExtResource("2_2o76q")
+credits_scene = ExtResource("3_2o76q")
+background_music = ExtResource("5_imvie")
+game_scene_path = "uid://d1ujue4jtg46f"
+
+[node name="UI" type="Control" parent="." unique_id=459206347]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=481537977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TitleLabel" type="Label" parent="UI/MarginContainer" unique_id=914026833]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Game Title"
+
+[node name="MenuButtons" type="VBoxContainer" parent="UI/MarginContainer" unique_id=1320976812]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="StartGameButton" type="Button" parent="UI/MarginContainer/MenuButtons" unique_id=709400580]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="UI/MarginContainer/MenuButtons" unique_id=285263145]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="UI/MarginContainer/MenuButtons" unique_id=228180762]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+text = "Credits"
+
+[node name="VersionLabel" type="Label" parent="UI/MarginContainer" unique_id=761656997]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 8
+text = "0.0.0"
+
+[connection signal="pressed" from="UI/MarginContainer/MenuButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]

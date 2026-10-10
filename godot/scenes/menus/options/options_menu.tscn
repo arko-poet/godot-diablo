@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://yt0chm4uh8tb"]
+
+[ext_resource type="Script" uid="uid://ciewu4hydd8l4" path="res://scripts/menus/options/options_menu.gd" id="1_5l26w"]
+[ext_resource type="PackedScene" uid="uid://d5o6i818sqqx" path="res://scenes/menus/options/audio_bus_slider.tscn" id="2_5l26w"]
+
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1244393214]
+script = ExtResource("1_5l26w")
+resolutions = Array[Vector2i]([Vector2i(640, 360), Vector2i(1280, 720), Vector2i(1920, 1080)])
+
+[node name="UI" type="Control" parent="." unique_id=1513808327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="UI" unique_id=628735275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="TabBar" type="TabBar" parent="UI" unique_id=761128450]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+current_tab = 0
+tab_alignment = 1
+tab_count = 4
+tab_0/title = "Video"
+tab_1/title = "Audio"
+tab_2/title = "Game"
+tab_3/title = "Input"
+
+[node name="VideoSettings" type="GridContainer" parent="UI" unique_id=2123833321]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="FullScreenLabel" type="Label" parent="UI/VideoSettings" unique_id=2011996290]
+layout_mode = 2
+text = "Full Screen:"
+
+[node name="FullScreenButton" type="CheckButton" parent="UI/VideoSettings" unique_id=172228360]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResolutionsLabel" type="Label" parent="UI/VideoSettings" unique_id=307415014]
+layout_mode = 2
+text = "Resolution:"
+
+[node name="ResolutionsButton" type="OptionButton" parent="UI/VideoSettings" unique_id=1545424601]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+
+[node name="AudioSettings" type="GridContainer" parent="UI" unique_id=237654769]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -52.5
+offset_right = 53.5
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="MasterBusLabel" type="Label" parent="UI/AudioSettings" unique_id=1724129773]
+layout_mode = 2
+text = "Master:"
+
+[node name="MasterBusSlider" parent="UI/AudioSettings" unique_id=705527615 instance=ExtResource("2_5l26w")]
+layout_mode = 2
+size_flags_vertical = 4
+bus_name = &"Master"
+
+[node name="MusicBusLabel" type="Label" parent="UI/AudioSettings" unique_id=1985433003]
+layout_mode = 2
+text = "Music:"
+
+[node name="MusicBusSlider" parent="UI/AudioSettings" unique_id=793392659 instance=ExtResource("2_5l26w")]
+layout_mode = 2
+size_flags_vertical = 4
+bus_name = &"Music"
+
+[node name="SFXBusLabel" type="Label" parent="UI/AudioSettings" unique_id=1915030843]
+layout_mode = 2
+text = "SFX:"
+
+[node name="SFXBusSilder" parent="UI/AudioSettings" unique_id=2038078927 instance=ExtResource("2_5l26w")]
+layout_mode = 2
+size_flags_vertical = 4
+bus_name = &"SFX"
+
+[node name="MuteLabel" type="Label" parent="UI/AudioSettings" unique_id=1209602024]
+layout_mode = 2
+text = "Mute:"
+
+[node name="MuteButton" type="CheckButton" parent="UI/AudioSettings" unique_id=1714952435]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="GameSettings" type="GridContainer" parent="UI" unique_id=1223380960]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="InputSettings" type="GridContainer" parent="UI" unique_id=1022807815]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="ActionColumnLabel" type="Label" parent="UI/InputSettings" unique_id=272849441]
+visible = false
+layout_mode = 2
+text = "Action"
+
+[node name="KeyColumnLabel" type="Label" parent="UI/InputSettings" unique_id=509906113]
+visible = false
+layout_mode = 2
+text = "Key"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AcceptOptionsButton" type="Button" parent="UI" unique_id=1342015817]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "OK"
+
+[connection signal="tab_changed" from="UI/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="toggled" from="UI/VideoSettings/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="item_selected" from="UI/VideoSettings/ResolutionsButton" to="." method="_on_resolutions_button_item_selected"]
+[connection signal="toggled" from="UI/AudioSettings/MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="pressed" from="UI/AcceptOptionsButton" to="." method="_on_accept_options_button_pressed"]
