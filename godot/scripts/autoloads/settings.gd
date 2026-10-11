@@ -62,8 +62,9 @@ func _ready() -> void:
 			continue
 
 		var input_event: InputEventKey = InputEventKey.new()
+		var default_keycode := InputMap.action_get_events(action)[0].as_text()
 		var input_keycode := OS.find_keycode_from_string(
-			config.get_value("input", action, InputMap.action_get_events(action)[0].keycode)
+			config.get_value("input", action, default_keycode)
 		)
 		input_event.keycode = (input_keycode & KEY_CODE_MASK) as Key
 		input_event.shift_pressed = input_keycode & KEY_MASK_SHIFT != 0
