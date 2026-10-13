@@ -17,7 +17,7 @@ extends Node
 
 func _ready() -> void:
 	title_label.text = ProjectSettings.get_setting("application/config/name")
-	version_label.text = ProjectSettings.get_setting("application/config/version")
+	version_label.text = "Diablo v%s" % ProjectSettings.get_setting("application/config/version")
 
 	_focus()
 
