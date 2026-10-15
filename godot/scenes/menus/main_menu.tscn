@@ -223,6 +223,7 @@ options_menu_scene = ExtResource("2_2o76q")
 credits_scene = ExtResource("3_2o76q")
 background_music = ExtResource("4_imvie")
 game_scene_path = "uid://d1ujue4jtg46f"
+metadata/_edit_horizontal_guides_ = [264.0]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=56199057]
 anchors_preset = 15
@@ -292,35 +293,42 @@ theme_override_constants/separation = 8
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="UI/MenuButtons" unique_id=285263145]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="UI/MenuButtons" unique_id=228180762]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Credits"
 
 [node name="Pentagrams" type="Node2D" parent="." unique_id=1954328908]
-position = Vector2(216, 249)
+unique_name_in_owner = true
+position = Vector2(151, 270)
 
 [node name="Left" type="AnimatedSprite2D" parent="Pentagrams" unique_id=569283911]
 sprite_frames = SubResource("SpriteFrames_nexcq")
 autoplay = "default"
 
 [node name="Right" type="AnimatedSprite2D" parent="Pentagrams" unique_id=1951327447]
-position = Vector2(208, 0)
+position = Vector2(336, 0)
 sprite_frames = SubResource("SpriteFrames_ng0o5")
 autoplay = "default"
 
+[connection signal="focus_entered" from="UI/MenuButtons/StartGameButton" to="." method="_on_start_game_entered"]
+[connection signal="mouse_entered" from="UI/MenuButtons/StartGameButton" to="." method="_on_start_game_entered"]
 [connection signal="pressed" from="UI/MenuButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="focus_entered" from="UI/MenuButtons/OptionsButton" to="." method="_on_options_entered"]
+[connection signal="mouse_entered" from="UI/MenuButtons/OptionsButton" to="." method="_on_options_entered"]
 [connection signal="pressed" from="UI/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="focus_entered" from="UI/MenuButtons/CreditsButton" to="." method="_on_credits_entered"]
+[connection signal="mouse_entered" from="UI/MenuButtons/CreditsButton" to="." method="_on_credits_entered"]
 [connection signal="pressed" from="UI/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]

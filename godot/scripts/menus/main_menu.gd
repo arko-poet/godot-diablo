@@ -1,5 +1,9 @@
 extends Node
 
+const START_GAME_BUTTON_Y = 204
+const OPTIONS_BUTTON_Y = 268
+const CREDITS_BUTTON_Y = 332
+
 @export var options_menu_scene: PackedScene
 @export var credits_scene: PackedScene
 
@@ -13,6 +17,8 @@ extends Node
 @onready var start_game_button: Button = %StartGameButton
 @onready var options_button: Button = %OptionsButton
 @onready var credits_button: Button = %CreditsButton
+
+@onready var pentagrams: Node2D = %Pentagrams
 
 
 func _ready() -> void:
@@ -43,3 +49,15 @@ func _on_start_game_button_pressed() -> void:
 
 func _focus() -> void:
 	start_game_button.grab_focus()
+
+
+func _on_start_game_entered() -> void:
+	pentagrams.position.y = START_GAME_BUTTON_Y
+
+
+func _on_options_entered() -> void:
+	pentagrams.position.y = OPTIONS_BUTTON_Y
+
+
+func _on_credits_entered() -> void:
+	pentagrams.position.y = CREDITS_BUTTON_Y
