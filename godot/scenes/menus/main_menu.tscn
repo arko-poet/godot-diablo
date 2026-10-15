@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bxqcdyqf2xbwr" path="res://audio/music/dintro.mp3" id="4_imvie"]
 [ext_resource type="Texture2D" uid="uid://p0njiiya46al" path="res://art/logo/logo_small.png" id="5_imvie"]
 [ext_resource type="Theme" uid="uid://8ka27fkn3f4p" path="res://resources/themes/menu_buttons.tres" id="6_ng0o5"]
+[ext_resource type="Texture2D" uid="uid://dwy1f77t4e7em" path="res://art/pentagram/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Pentagram transparent.png" id="7_8r73w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng0o5"]
 atlas = ExtResource("5_imvie")
@@ -120,6 +121,102 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_287l7"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(0, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hoqd"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(49, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_555wk"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(98, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awvna"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(147, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jygr6"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(196, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8vdk"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(245, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6imgi"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(294, 48, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hq2q"]
+atlas = ExtResource("7_8r73w")
+region = Rect2(343, 48, 49, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nexcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hoqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_555wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awvna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jygr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8vdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6imgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hq2q")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ng0o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hoqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_555wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awvna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jygr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8vdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6imgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hq2q")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="MainMenu" type="Node" unique_id=939735052]
 script = ExtResource("1_ovrgc")
 options_menu_scene = ExtResource("2_2o76q")
@@ -211,6 +308,18 @@ custom_minimum_size = Vector2(160, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Credits"
+
+[node name="Pentagrams" type="Node2D" parent="." unique_id=1954328908]
+position = Vector2(216, 249)
+
+[node name="Left" type="AnimatedSprite2D" parent="Pentagrams" unique_id=569283911]
+sprite_frames = SubResource("SpriteFrames_nexcq")
+autoplay = "default"
+
+[node name="Right" type="AnimatedSprite2D" parent="Pentagrams" unique_id=1951327447]
+position = Vector2(208, 0)
+sprite_frames = SubResource("SpriteFrames_ng0o5")
+autoplay = "default"
 
 [connection signal="pressed" from="UI/MenuButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="UI/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
