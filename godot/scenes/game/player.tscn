@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dbynywaj2c6up" path="res://art/animations/character/idle/idle.png" id="2_dd427"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgun3"]
+radius = 16.0
+height = 64.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3rb4"]
 atlas = ExtResource("2_dd427")
@@ -359,7 +361,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0eoyi")
 }],
 "loop": 1,
-"name": &"idle_E",
+"name": &"IDLE_E",
 "speed": 10.0
 }, {
 "frames": [{
@@ -394,7 +396,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_6ycxi")
 }],
 "loop": 1,
-"name": &"idle_N",
+"name": &"IDLE_N",
 "speed": 10.0
 }, {
 "frames": [{
@@ -429,7 +431,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3vrwl")
 }],
 "loop": 1,
-"name": &"idle_NE",
+"name": &"IDLE_NE",
 "speed": 10.0
 }, {
 "frames": [{
@@ -464,7 +466,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_g8nad")
 }],
 "loop": 1,
-"name": &"idle_NW",
+"name": &"IDLE_NW",
 "speed": 10.0
 }, {
 "frames": [{
@@ -499,7 +501,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ttce3")
 }],
 "loop": 1,
-"name": &"idle_S",
+"name": &"IDLE_S",
 "speed": 10.0
 }, {
 "frames": [{
@@ -534,7 +536,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5vue8")
 }],
 "loop": 1,
-"name": &"idle_SE",
+"name": &"IDLE_SE",
 "speed": 10.0
 }, {
 "frames": [{
@@ -569,7 +571,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qb2qy")
 }],
 "loop": 1,
-"name": &"idle_SW",
+"name": &"IDLE_SW",
 "speed": 10.0
 }, {
 "frames": [{
@@ -604,7 +606,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kxok0")
 }],
 "loop": 1,
-"name": &"idle_W",
+"name": &"IDLE_W",
 "speed": 10.0
 }]
 
@@ -617,6 +619,7 @@ script = ExtResource("1_6w7gq")
 shape = SubResource("CapsuleShape2D_vgun3")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=102573556]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_vgun3")
-animation = &"idle_S"
-autoplay = "idle_S"
+animation = &"IDLE_S"
+autoplay = "IDLE_S"
