@@ -8,7 +8,7 @@ enum State {
 	IDLE
 }
 
-var _direction := Direction.S:
+var _direction := Direction.SE:
 	set(value):
 		_direction = value
 		print(Direction.keys()[_direction])
@@ -17,30 +17,36 @@ var _state := State.IDLE:
 	set(value):
 		_state = value
 		_update_animation()
-var _cell := Vector2(-1, -1)
+var _cell := Vector2i(-1, -0)
 
 @onready var _animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
 
 
 func move(cell: Vector2i) -> void:
-	print(cell)
-	if cell.x < _cell.x and cell.y < _cell.y:
-		_direction = Direction.NW
-	elif cell.x == _cell.x and cell.y < _cell.y:
-		_direction = Direction.N
-	elif cell.x > _cell.x and cell.y < _cell.y:
-		_direction = Direction.NE
-	elif cell.x < _cell.x and cell.y == _cell.y:
-		_direction = Direction.W
-	elif cell.x > _cell.x and cell.y == _cell.y:
-		_direction = Direction.E
-	elif cell.x < _cell.x and cell.y > _cell.y:
-		_direction = Direction.SW
-	elif cell.x > _cell.x and cell.y > _cell.y:
-		_direction = Direction.SE
-	elif cell.x == _cell.x and cell.y > _cell.y:
-		_direction = Direction.S
+	print("to %s" % cell)
+	print("from %s" % _cell)
+	var direction := (cell - _cell).sign()
+	print("result %s" % direction)
+	match direction:
+		Vector2i(-1, -1):
+			_direction = Direction.NW
+		Vector2i(-1, 0):
+			_direction = Direction.W
+		Vector2i(-1, 1):
+			_direction = Direction.SW
+		Vector2i(0, -1):
+			_direction = Direction.N
+		Vector2i(0, 1):
+			_direction = Direction.S
+		Vector2i(1, -1):
+			_direction = Direction.NE
+		Vector2i(1, 0):
+			_direction = Direction.E
+		Vector2i(1, 1):
+			_direction = Direction.SE
+		_:
+			_direction = _direction
 
 
 func _update_animation() -> void:
