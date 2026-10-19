@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yt0chm4uh8tb"]
 
-[ext_resource type="Script" uid="uid://ciewu4hydd8l4" path="res://scripts/menus/options/options_menu.gd" id="1_5l26w"]
+[ext_resource type="Script" uid="uid://ciewu4hydd8l4" path="res://scenes/menus/options/options_menu.gd" id="1_5l26w"]
 [ext_resource type="PackedScene" uid="uid://d5o6i818sqqx" path="res://scenes/menus/options/audio_bus_slider.tscn" id="2_5l26w"]
 
 [node name="OptionsMenu" type="CanvasLayer" unique_id=1244393214]

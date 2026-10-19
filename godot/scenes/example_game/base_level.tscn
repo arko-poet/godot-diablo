@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1ujue4jtg46f"]
 
-[ext_resource type="Script" uid="uid://crovuo8whtepl" path="res://scripts/example_game/base_level.gd" id="1_cxly2"]
+[ext_resource type="Script" uid="uid://crovuo8whtepl" path="res://scenes/example_game/base_level.gd" id="1_cxly2"]
 [ext_resource type="AudioStream" uid="uid://c4vbqo4n6m3k7" path="res://audio/music/template/Classicals.de - Chopin - Nocturne B. 49 in C-sharp minor 'Lento con gran espressione'.mp3" id="2_nrbsp"]
 [ext_resource type="AudioStream" uid="uid://cyyoajhg1hf4k" path="res://audio/sfx/kenney_ui-audio/Audio/kenney_digital-audio/Audio/pepSound1.ogg" id="3_wc4tu"]
 [ext_resource type="PackedScene" uid="uid://brt4e2uh753mt" path="res://scenes/menus/pause_menu.tscn" id="4_fcrwm"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjlyrb5kgwkgd"]
 
-[ext_resource type="Script" uid="uid://dykwbc47ghuqi" path="res://scripts/ui_components/confirmation_panel.gd" id="1_5b2bw"]
+[ext_resource type="Script" uid="uid://dykwbc47ghuqi" path="res://scenes/ui_components/confirmation_panel.gd" id="1_5b2bw"]
 
 [node name="ConfirmationPanel" type="PanelContainer" unique_id=1499947037]
 anchors_preset = 8

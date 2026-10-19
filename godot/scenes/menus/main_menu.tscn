@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsdmcnxnoe7br"]
 
-[ext_resource type="Script" uid="uid://dckrafdur0rqe" path="res://scripts/menus/main_menu.gd" id="1_ovrgc"]
+[ext_resource type="Script" uid="uid://dckrafdur0rqe" path="res://scenes/menus/main_menu.gd" id="1_ovrgc"]
 [ext_resource type="PackedScene" uid="uid://yt0chm4uh8tb" path="res://scenes/menus/options/options_menu.tscn" id="2_2o76q"]
 [ext_resource type="PackedScene" uid="uid://u4wnoweg0bmu" path="res://scenes/menus/credits.tscn" id="3_2o76q"]
 [ext_resource type="AudioStream" uid="uid://bxqcdyqf2xbwr" path="res://audio/music/dintro.mp3" id="4_imvie"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://u4wnoweg0bmu"]
 
-[ext_resource type="Script" uid="uid://bu680gvmu0hh3" path="res://scripts/menus/credits.gd" id="1_cu0al"]
+[ext_resource type="Script" uid="uid://bu680gvmu0hh3" path="res://scenes/menus/credits.gd" id="1_cu0al"]
 
 [node name="CreditsLayer" type="CanvasLayer" unique_id=1987280426]
 script = ExtResource("1_cu0al")

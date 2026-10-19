@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8p7oeaechiwf"]
 
-[ext_resource type="Script" uid="uid://dqkjokftm72nt" path="res://music_controller.gd" id="1_o7k1f"]
+[ext_resource type="Script" uid="uid://dqkjokftm72nt" path="res://scenes/sound/music_controller.gd" id="1_o7k1f"]
 
 [node name="MusicController" type="Node" unique_id=552065947]
 script = ExtResource("1_o7k1f")
