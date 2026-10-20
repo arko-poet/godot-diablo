@@ -19,5 +19,6 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			player.move(floor_layer.local_to_map(get_local_mouse_position()))
+			var cell := floor_layer.local_to_map(get_local_mouse_position())
+			player.move(astar.get_point_path(player.cell, cell), floor_layer)
 			get_viewport().set_input_as_handled()
