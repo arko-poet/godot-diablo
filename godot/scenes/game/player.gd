@@ -19,6 +19,7 @@ var _state := State.IDLE:
 		_update_animation()
 var cell := Vector2i(-1, -0)
 var _speed := 500
+var _offset := Vector2(0, -32)
 
 @onready var _animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
@@ -62,7 +63,7 @@ func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
 		_:
 			_direction = _direction
 	var tween = create_tween()
-	tween.tween_property(self, ^"position", target_position, 0.5)
+	tween.tween_property(self, ^"position", target_position + _offset, 0.5)
 	await tween.finished
 	cell = next_cell
 	move(path, grid)
