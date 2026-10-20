@@ -64,6 +64,7 @@ func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
 	var tween = create_tween()
 	tween.tween_property(self, ^"position", target_position, 0.5)
 	await tween.finished
+	cell = next_cell
 	move(path, grid)
 
 

@@ -4,6 +4,8 @@ var astar := AStarGrid2D.new()
 
 @onready var player: CharacterBody2D = %Player
 @onready var floor_layer: TileMapLayer = %FloorLayer
+@onready var player_position: Label = %PlayerPosition
+@onready var mouse_position: Label = %MousePosition
 
 
 func _ready() -> void:
@@ -15,6 +17,10 @@ func _ready() -> void:
 	astar.cell_shape = AStarGrid2D.CELL_SHAPE_ISOMETRIC_DOWN
 	astar.update()
 
+
+func _process(delta: float) -> void:
+	player_position.text = "%s" % player.position
+	mouse_position.text = "%s" % get_global_mouse_position()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
