@@ -6,6 +6,7 @@ enum Direction {
 
 enum State {
 	IDLE,
+	WALK
 }
 
 var _direction := Direction.SE:
@@ -64,7 +65,9 @@ func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
 			_direction = _direction
 	var tween = create_tween()
 	tween.tween_property(self, ^"position", target_position + _offset, 0.5)
+	_state = State.WALK
 	await tween.finished
+	_state = State.IDLE
 	cell = next_cell
 	move(path, grid)
 
