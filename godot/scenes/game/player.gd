@@ -5,7 +5,7 @@ enum Direction {
 }
 
 enum State {
-	IDLE
+	IDLE,
 }
 
 var _direction := Direction.SE:

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbynywaj2c6up"
-path="res://.godot/imported/idle.png-acf6fae9517fe674d699a59f599bae86.ctex"
+path="res://.godot/imported/idle.png-ce64a4910558063b71146d5ec3d22dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/animations/character/idle/idle.png"
-dest_files=["res://.godot/imported/idle.png-acf6fae9517fe674d699a59f599bae86.ctex"]
+source_file="res://art/animations/character/warrior/light_armour_and_sword/idle.png"
+dest_files=["res://.godot/imported/idle.png-ce64a4910558063b71146d5ec3d22dc9.ctex"]
 
 [params]
 
