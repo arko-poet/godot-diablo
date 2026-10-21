@@ -1,14 +1,33 @@
 extends CharacterBody2D
 
 enum Direction {
-	S, SW, W, NW, N, NE, E, SE
+	S,
+	SW,
+	W,
+	NW,
+	N,
+	NE,
+	E,
+	SE,
 }
 
 enum State {
 	IDLE,
-	WALK
+	WALK,
 }
 
+const WALK_DURATIONS := {
+	Direction.S: 0.45,
+	Direction.SW: 0.8,
+	Direction.W: 0.45,
+	Direction.NW: 0.4,
+	Direction.N: 0.45,
+	Direction.NE: 0.8,
+	Direction.E: 0.45,
+	Direction.SE: 0.4,
+}
+
+var cell := Vector2i(-1, -0)
 var _direction := Direction.SE:
 	set(value):
 		_direction = value
@@ -18,28 +37,16 @@ var _state := State.IDLE:
 	set(value):
 		_state = value
 		_update_animation()
-var cell := Vector2i(-1, -0)
 var _speed := 500
 var _offset := Vector2(0, -32)
 
 @onready var _animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
-#
-#func _process(_delta: float) -> void:
-	#if position == target_position:
-		#return
-		#
-	#velocity = (target_position - position).normalized() * _speed
-	#move_and_slide()
-		#
-	#
-	
-
 
 func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
-	print(path)
 	if not path:
 		return
+		
 	var next_cell := grid.local_to_map(path[0])
 	var target_position := path[0]
 	path.remove_at(0)
@@ -63,14 +70,16 @@ func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
 			_direction = Direction.SE
 		_:
 			_direction = _direction
+	
 	var tween = create_tween()
-	tween.tween_property(self, ^"position", target_position + _offset, 0.5)
+	tween.tween_property(self, ^"position", target_position + _offset, WALK_DURATIONS[_direction])
 	_state = State.WALK
+	
 	await tween.finished
 	_state = State.IDLE
 	cell = next_cell
+	
 	move(path, grid)
-
 
 
 func _update_animation() -> void:

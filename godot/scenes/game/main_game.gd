@@ -18,13 +18,16 @@ func _ready() -> void:
 	astar.update()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_position.text = "%s" % player.position
 	mouse_position.text = "%s" % get_global_mouse_position()
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			var cell := floor_layer.local_to_map(get_local_mouse_position())
-			player.move(astar.get_point_path(player.cell, cell), floor_layer)
+			var path := astar.get_point_path(player.cell, cell)
+			path.remove_at(0) # the first one is where player already is
+			player.move(path, floor_layer)
 			get_viewport().set_input_as_handled()
