@@ -4,4 +4,4 @@
 
 [node name="GameController" type="Node" unique_id=753798336]
 script = ExtResource("1_3iy47")
-_levels = Array[String](["uid://e35kxql7rqcc", "uid://c2k0lod86n0jx", "uid://b4lyu0tkqwapp"])
+_levels = Array[String](["uid://bn47f81kl1q4r"])

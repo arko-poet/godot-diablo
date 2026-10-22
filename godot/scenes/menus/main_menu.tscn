@@ -222,7 +222,7 @@ script = ExtResource("1_ovrgc")
 options_menu_scene = ExtResource("2_2o76q")
 credits_scene = ExtResource("3_2o76q")
 background_music = ExtResource("4_imvie")
-game_scene_path = "uid://d1ujue4jtg46f"
+game_scene_path = "uid://bn47f81kl1q4r"
 metadata/_edit_horizontal_guides_ = [264.0]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=56199057]
