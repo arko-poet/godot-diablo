@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b38qpnba081hg" path="res://scenes/game/main_game.gd" id="1_7qhhq"]
 [ext_resource type="Texture2D" uid="uid://c54v3itvu63g8" path="res://art/tiles/church_dungeon/57609_transparent_no_boreder.png" id="1_p17hc"]
+[ext_resource type="AudioStream" uid="uid://3lluxrfw2b5a" path="res://audio/music/dlvla.mp3" id="2_noi7s"]
 [ext_resource type="PackedScene" uid="uid://yv36q5ja66t7" path="res://scenes/game/player.tscn" id="2_qgbr3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgbr3"]
@@ -224,6 +225,7 @@ sources/2 = SubResource("TileSetAtlasSource_qgbr3")
 
 [node name="MainGame" type="Node2D" unique_id=58936018]
 script = ExtResource("1_7qhhq")
+bgm = ExtResource("2_noi7s")
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=519143164]
 y_sort_enabled = true

@@ -1,5 +1,8 @@
 extends Node2D
 
+
+@export var bgm: AudioStream
+
 var astar := AStarGrid2D.new()
 
 @onready var player: CharacterBody2D = %Player
@@ -9,6 +12,8 @@ var astar := AStarGrid2D.new()
 
 
 func _ready() -> void:
+	MusicController.play(bgm)
+	
 	astar.region = floor_layer.get_used_rect()
 	astar.cell_size = floor_layer.tile_set.tile_size
 	#astar.offset = floor_layer.tile_set.tile_size * 0.5
