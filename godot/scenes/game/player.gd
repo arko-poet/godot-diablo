@@ -40,10 +40,19 @@ var _state := State.IDLE:
 var _speed := 500
 var _offset := Vector2(0, -32)
 
+var path: PackedVector2Array
+var grid: TileMapLayer
+
 @onready var _animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
 
-func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
+func _process(_delta: float) -> void:
+	if path and _state == State.IDLE:
+		move()
+
+
+
+func move() -> void:
 	if not path:
 		return
 		
@@ -74,12 +83,10 @@ func move(path: PackedVector2Array, grid: TileMapLayer) -> void:
 	var tween = create_tween()
 	tween.tween_property(self, ^"position", target_position + _offset, WALK_DURATIONS[_direction])
 	_state = State.WALK
+	cell = next_cell
 	
 	await tween.finished
 	_state = State.IDLE
-	cell = next_cell
-	
-	move(path, grid)
 
 
 func _update_animation() -> void:

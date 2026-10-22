@@ -21,6 +21,8 @@ func _ready() -> void:
 	astar.default_estimate_heuristic = AStarGrid2D.HEURISTIC_OCTILE
 	astar.cell_shape = AStarGrid2D.CELL_SHAPE_ISOMETRIC_DOWN
 	astar.update()
+	
+	player.grid = floor_layer
 
 
 func _process(_delta: float) -> void:
@@ -34,5 +36,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			var cell := floor_layer.local_to_map(get_local_mouse_position())
 			var path := astar.get_point_path(player.cell, cell)
 			path.remove_at(0) # the first one is where player already is
-			player.move(path, floor_layer)
+			player.path = path
 			get_viewport().set_input_as_handled()
