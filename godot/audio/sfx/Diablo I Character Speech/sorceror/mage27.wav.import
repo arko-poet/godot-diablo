@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bswv0ue0nyd0k"
+path="res://.godot/imported/mage27.wav-abe04f2a8bc94a02412c07144ce88f5f.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Diablo I Character Speech/sorceror/mage27.wav"
+dest_files=["res://.godot/imported/mage27.wav-abe04f2a8bc94a02412c07144ce88f5f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

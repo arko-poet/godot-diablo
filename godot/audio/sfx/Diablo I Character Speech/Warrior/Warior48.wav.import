@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4aljgj8acbnx"
+path="res://.godot/imported/Warior48.wav-1c98d3cf5caf37fa7a2a229d493e631a.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Diablo I Character Speech/Warrior/Warior48.wav"
+dest_files=["res://.godot/imported/Warior48.wav-1c98d3cf5caf37fa7a2a229d493e631a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

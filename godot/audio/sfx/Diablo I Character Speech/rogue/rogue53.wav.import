@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr7k4hgnr6ybu"
+path="res://.godot/imported/rogue53.wav-8431a12707d7f048cee575194b9ee825.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Diablo I Character Speech/rogue/rogue53.wav"
+dest_files=["res://.godot/imported/rogue53.wav-8431a12707d7f048cee575194b9ee825.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

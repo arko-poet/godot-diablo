@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dn5s3cgs5ld3l"
+path="res://.godot/imported/rogue64.wav-8d90e23cf4e6ba3542331d26ce06ba79.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Diablo I Character Speech/rogue/rogue64.wav"
+dest_files=["res://.godot/imported/rogue64.wav-8d90e23cf4e6ba3542331d26ce06ba79.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

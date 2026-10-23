@@ -16,6 +16,8 @@ enum State {
 	WALK,
 }
 
+@export var speech_entrance: AudioStream
+
 const WALK_DURATIONS := {
 	Direction.S: 0.45,
 	Direction.SW: 0.8,
@@ -44,6 +46,10 @@ var path: PackedVector2Array
 var grid: TileMapLayer
 
 @onready var _animated_sprite: AnimatedSprite2D = %AnimatedSprite
+
+
+func _ready() -> void:
+	SfxController.play(speech_entrance)
 
 
 func _process(_delta: float) -> void:

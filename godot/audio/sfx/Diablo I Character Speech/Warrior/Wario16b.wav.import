@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btr6cy2wukotj"
+path="res://.godot/imported/Wario16b.wav-4eec79356d30ab247faf91640986f0f3.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Diablo I Character Speech/Warrior/Wario16b.wav"
+dest_files=["res://.godot/imported/Wario16b.wav-4eec79356d30ab247faf91640986f0f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

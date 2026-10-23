@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ceii1kbskgh2w"
+path="res://.godot/imported/rogue71b.wav-3424d86cc4b2b90f66e3ce2af3f68bdb.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Diablo I Character Speech/rogue/rogue71b.wav"
+dest_files=["res://.godot/imported/rogue71b.wav-3424d86cc4b2b90f66e3ce2af3f68bdb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
