@@ -259,3 +259,6 @@ layout_mode = 2
 [node name="MousePosition" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1808313974]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=880016610]
+color = Color(0.06666667, 0.047058824, 0.023529412, 1)
