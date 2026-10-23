@@ -1101,6 +1101,7 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_nybob"]
+offsets = PackedFloat32Array(0, 0.6586103)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vgun3"]

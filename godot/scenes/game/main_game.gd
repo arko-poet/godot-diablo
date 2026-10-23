@@ -1,28 +1,22 @@
 extends Node2D
 
-
 @export var bgm: AudioStream
 
 var astar := AStarGrid2D.new()
 
 @onready var player: CharacterBody2D = %Player
 @onready var floor_layer: TileMapLayer = %FloorLayer
+
 @onready var player_position: Label = %PlayerPosition
 @onready var mouse_position: Label = %MousePosition
 
 
 func _ready() -> void:
 	MusicController.play(bgm)
-	
-	astar.region = floor_layer.get_used_rect()
-	astar.cell_size = floor_layer.tile_set.tile_size
-	#astar.offset = floor_layer.tile_set.tile_size * 0.5
-	astar.default_compute_heuristic = AStarGrid2D.HEURISTIC_OCTILE
-	astar.default_estimate_heuristic = AStarGrid2D.HEURISTIC_OCTILE
-	astar.cell_shape = AStarGrid2D.CELL_SHAPE_ISOMETRIC_DOWN
-	astar.update()
-	
-	player.grid = floor_layer
+
+	_setup_astar()
+
+	#player.grid = floor_layer
 
 
 func _process(_delta: float) -> void:
@@ -33,8 +27,19 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			var cell := floor_layer.local_to_map(get_local_mouse_position())
-			var path := astar.get_point_path(player.cell, cell)
+			var target_cell := floor_layer.local_to_map(get_local_mouse_position())
+			var player_cell := floor_layer.local_to_map(player.target_position)
+			var path := astar.get_point_path(player_cell, target_cell)
 			path.remove_at(0) # the first one is where player already is
 			player.path = path
 			get_viewport().set_input_as_handled()
+
+
+func _setup_astar() -> void:
+	astar.region = floor_layer.get_used_rect()
+	astar.cell_size = floor_layer.tile_set.tile_size
+	#astar.offset = floor_layer.tile_set.tile_size * 0.5
+	astar.default_compute_heuristic = AStarGrid2D.HEURISTIC_OCTILE
+	astar.default_estimate_heuristic = AStarGrid2D.HEURISTIC_OCTILE
+	astar.cell_shape = AStarGrid2D.CELL_SHAPE_ISOMETRIC_DOWN
+	astar.update()
