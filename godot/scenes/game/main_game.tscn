@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://3lluxrfw2b5a" path="res://audio/music/dlvla.mp3" id="2_noi7s"]
 [ext_resource type="PackedScene" uid="uid://yv36q5ja66t7" path="res://scenes/game/player.tscn" id="2_qgbr3"]
 [ext_resource type="AudioStream" uid="uid://c4nmsftevwmii" path="res://audio/sfx/Diablo I Character Speech/Warrior/Wario97.wav" id="5_p2514"]
+[ext_resource type="Texture2D" uid="uid://2m3amnlkju7p" path="res://art/hud/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - HUD.png" id="6_rpywg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgbr3"]
 texture = ExtResource("1_p17hc")
@@ -224,6 +225,10 @@ tile_layout = 5
 tile_size = Vector2i(128, 64)
 sources/2 = SubResource("TileSetAtlasSource_qgbr3")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgun3"]
+atlas = ExtResource("6_rpywg")
+region = Rect2(1, 261, 640, 129)
+
 [node name="MainGame" type="Node2D" unique_id=58936018]
 script = ExtResource("1_7qhhq")
 bgm = ExtResource("2_noi7s")
@@ -249,9 +254,12 @@ color = Color(0.06666667, 0.047058824, 0.023529412, 1)
 
 [node name="UIRoot" type="Control" parent="UILayer" unique_id=350606816]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="DebugLabels" type="VBoxContainer" parent="UILayer/UIRoot" unique_id=1146250430]
 layout_mode = 0
@@ -265,3 +273,17 @@ layout_mode = 2
 [node name="MousePosition" type="Label" parent="UILayer/UIRoot/DebugLabels" unique_id=1808313974]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/UIRoot" unique_id=1013129914]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -129.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_vgun3")
