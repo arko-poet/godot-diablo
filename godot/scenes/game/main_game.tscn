@@ -274,7 +274,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="UILayer/UIRoot" unique_id=1013129914]
+[node name="HUDTexture" type="TextureRect" parent="UILayer/UIRoot" unique_id=1013129914]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

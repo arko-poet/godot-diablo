@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ba6divtn6joy" path="res://scenes/game/player.gd" id="1_6w7gq"]
 [ext_resource type="Texture2D" uid="uid://dbynywaj2c6up" path="res://art/animations/character/warrior/light_armour_and_sword/idle.png" id="2_dd427"]
-[ext_resource type="AudioStream" uid="uid://bf8ps1u5ohoc6" path="res://audio/sfx/Diablo I Character Speech/Warrior/warior97.wav" id="2_nybob"]
 [ext_resource type="Texture2D" uid="uid://c3msj6ry7y4ig" path="res://art/animations/character/warrior/light_armour_and_sword/walk.png" id="3_u3rb4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgun3"]
@@ -1114,9 +1113,9 @@ fill_to = Vector2(1, 0.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=704650882]
 script = ExtResource("1_6w7gq")
-speech_entrance = ExtResource("2_nybob")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1561746489]
+offset = Vector2(0, 65)
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1224727929]
 shape = SubResource("CapsuleShape2D_vgun3")
