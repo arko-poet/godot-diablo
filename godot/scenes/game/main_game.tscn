@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yv36q5ja66t7" path="res://scenes/game/player.tscn" id="2_qgbr3"]
 [ext_resource type="AudioStream" uid="uid://c4nmsftevwmii" path="res://audio/sfx/Diablo I Character Speech/Warrior/Wario97.wav" id="5_p2514"]
 [ext_resource type="Texture2D" uid="uid://2m3amnlkju7p" path="res://art/hud/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - HUD.png" id="6_rpywg"]
+[ext_resource type="PackedScene" uid="uid://brt4e2uh753mt" path="res://scenes/menus/pause_menu.tscn" id="7_ef7fl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgbr3"]
 texture = ExtResource("1_p17hc")
@@ -232,6 +233,9 @@ region = Rect2(1, 261, 640, 129)
 [node name="MainGame" type="Node2D" unique_id=58936018]
 script = ExtResource("1_7qhhq")
 bgm = ExtResource("2_noi7s")
+
+[node name="PauseMenu" parent="." unique_id=2005489429 instance=ExtResource("7_ef7fl")]
+layer = 2
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=519143164]
 y_sort_enabled = true
