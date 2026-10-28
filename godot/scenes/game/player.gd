@@ -49,7 +49,7 @@ var _state := State.IDLE:
 	set(value):
 		_state = value
 		_update_animation()
-var _sprite_offset := Vector2(0, -32)
+var _sprite_offset := Vector2(0, -16)
 
 @onready var _animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
