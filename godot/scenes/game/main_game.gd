@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			var target_cell := pathing_layer.local_to_map(get_local_mouse_position())
+			var target_cell := pathing_layer.local_to_map(pathing_layer.get_local_mouse_position()) - Vector2i.ONE
 			var player_cell := pathing_layer.local_to_map(player.target_position)
 			print("--")
 			print(player_cell)
