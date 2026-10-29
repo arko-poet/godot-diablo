@@ -63,7 +63,6 @@ position = Vector2(-62, 29)
 entrance_speech = ExtResource("5_p2514")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=880016610]
-visible = false
 color = Color(0.06666667, 0.047058824, 0.023529412, 1)
 
 [node name="PauseMenu" parent="." unique_id=2005489429 instance=ExtResource("7_ef7fl")]

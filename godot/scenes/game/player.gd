@@ -17,14 +17,14 @@ enum State {
 }
 
 const WALK_DURATIONS := {
-	Direction.S: 0.45,
-	Direction.SW: 0.8,
-	Direction.W: 0.45,
-	Direction.NW: 0.4,
-	Direction.N: 0.45,
-	Direction.NE: 0.8,
-	Direction.E: 0.45,
-	Direction.SE: 0.4,
+	Direction.S: 0.22,
+	Direction.SW: 0.4,
+	Direction.W: 0.22,
+	Direction.NW: 0.2,
+	Direction.N: 0.22,
+	Direction.NE: 0.4,
+	Direction.E: 0.22,
+	Direction.SE: 0.2,
 }
 const VECTOR_TO_DIRECTION := {
 	Vector2i(-1, -1): Direction.W,
