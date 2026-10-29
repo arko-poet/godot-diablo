@@ -39,6 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			print(player_cell)
 			print(target_cell)
 			var path := astar.get_point_path(player_cell, target_cell)
+			if not path:
+				return
 			path.remove_at(0) # the first one is where player already is
 			player.path = path
 			get_viewport().set_input_as_handled()
@@ -58,4 +60,5 @@ func _setup_astar() -> void:
 	astar.update()
 
 	for cell in pathing_layer.get_used_cells():
-		astar.set_point_solid(cell - Vector2i.ONE)
+		if used_rect.has_point(cell - Vector2i.ONE):
+			astar.set_point_solid(cell - Vector2i.ONE)
