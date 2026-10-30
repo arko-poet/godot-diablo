@@ -32,7 +32,7 @@ bgm = ExtResource("2_noi7s")
 [node name="Player" parent="." unique_id=704650882 instance=ExtResource("2_qgbr3")]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(-62, 29)
+position = Vector2(0, 16)
 entrance_speech = ExtResource("5_p2514")
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=519143164]
@@ -64,7 +64,6 @@ tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAA
 tile_set = SubResource("TileSet_ilpah")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=880016610]
-visible = false
 color = Color(0.06666667, 0.047058824, 0.023529412, 1)
 
 [node name="PauseMenu" parent="." unique_id=2005489429 instance=ExtResource("7_ef7fl")]

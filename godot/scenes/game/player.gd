@@ -66,6 +66,9 @@ func _process(_delta: float) -> void:
 func move() -> void:
 	target_position = path[0]
 	path.remove_at(0)
+	
+	if target_position == (position - _sprite_offset):
+		return
 
 	_direction = VECTOR_TO_DIRECTION[
 		Vector2i((target_position - (position - _sprite_offset)).sign())
