@@ -1123,7 +1123,7 @@ shape = SubResource("CapsuleShape2D_vgun3")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=102573556]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_vgun3")
-animation = &"WALK_E"
+animation = &"WALK_SE"
 autoplay = "IDLE_SE"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1572975163]

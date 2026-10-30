@@ -17,13 +17,13 @@ enum State {
 }
 
 const WALK_DURATIONS := {
-	Direction.S: 0.22,
+	Direction.S: 0.2,
 	Direction.SW: 0.4,
-	Direction.W: 0.22,
+	Direction.W: 0.2,
 	Direction.NW: 0.2,
-	Direction.N: 0.22,
+	Direction.N: 0.2,
 	Direction.NE: 0.4,
-	Direction.E: 0.22,
+	Direction.E: 0.2,
 	Direction.SE: 0.2,
 }
 const VECTOR_TO_DIRECTION := {
@@ -84,7 +84,10 @@ func move() -> void:
 	_state = State.WALK
 
 	await tween.finished
-	_state = State.IDLE
+	if path:
+		move()
+	else:
+		_state = State.IDLE
 
 
 func _update_animation() -> void:
