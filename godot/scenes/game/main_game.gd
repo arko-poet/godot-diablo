@@ -14,11 +14,14 @@ var astar := AStarGrid2D.new()
 @onready var mouse_tile: Label = %MouseTile
 @onready var player_tile: Label = %PlayerTile
 
+@onready var canvas_modulate: CanvasModulate = %CanvasModulate
 
 func _ready() -> void:
 	MusicController.play(bgm)
 
 	_setup_astar()
+	
+	canvas_modulate.show()
 
 
 func _process(_delta: float) -> void:

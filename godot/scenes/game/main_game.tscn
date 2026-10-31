@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c4nmsftevwmii" path="res://audio/sfx/Diablo I Character Speech/Warrior/Wario97.wav" id="5_p2514"]
 [ext_resource type="Texture2D" uid="uid://2m3amnlkju7p" path="res://art/hud/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - HUD.png" id="6_rpywg"]
 [ext_resource type="PackedScene" uid="uid://brt4e2uh753mt" path="res://scenes/menus/pause_menu.tscn" id="7_ef7fl"]
+[ext_resource type="PackedScene" uid="uid://b0tit4wujvs03" path="res://scenes/game/Skeleton.tscn" id="7_qsdf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsdf0"]
 texture = ExtResource("4_11nld")
@@ -64,7 +65,12 @@ tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAA
 tile_set = SubResource("TileSet_ilpah")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=880016610]
+unique_name_in_owner = true
+visible = false
 color = Color(0.06666667, 0.047058824, 0.023529412, 1)
+
+[node name="Fallen" parent="." unique_id=773512642 instance=ExtResource("7_qsdf0")]
+position = Vector2(-416, 160)
 
 [node name="PauseMenu" parent="." unique_id=2005489429 instance=ExtResource("7_ef7fl")]
 layer = 2
