@@ -70,6 +70,7 @@ visible = false
 color = Color(0.06666667, 0.047058824, 0.023529412, 1)
 
 [node name="Fallen" parent="." unique_id=773512642 instance=ExtResource("7_qsdf0")]
+z_index = 1
 position = Vector2(-416, 160)
 
 [node name="PauseMenu" parent="." unique_id=2005489429 instance=ExtResource("7_ef7fl")]
