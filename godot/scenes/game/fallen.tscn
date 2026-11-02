@@ -1723,7 +1723,7 @@ material = SubResource("ShaderMaterial_agngd")
 sprite_frames = SubResource("SpriteFrames_rr46p")
 animation = &"DIE_E"
 autoplay = "IDLE_SE"
-frame_progress = 0.0911361
+frame_progress = 0.871563
 
 [node name="Area2D" type="Area2D" parent="." unique_id=868755421]
 
