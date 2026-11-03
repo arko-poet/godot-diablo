@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d04q5th3swiga"
+path="res://.godot/imported/healing.wav-d409efa0f2c62422fbddb61631a7f622.sample"
+
+[deps]
+
+source_file="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/healing.wav"
+dest_files=["res://.godot/imported/healing.wav-d409efa0f2c62422fbddb61631a7f622.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

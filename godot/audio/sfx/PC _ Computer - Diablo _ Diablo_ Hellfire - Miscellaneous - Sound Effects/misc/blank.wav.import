@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpyt431rhx8xh"
+path="res://.godot/imported/blank.wav-a582e5cba5d247de345faa35a91c923b.sample"
+
+[deps]
+
+source_file="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/blank.wav"
+dest_files=["res://.godot/imported/blank.wav-a582e5cba5d247de345faa35a91c923b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

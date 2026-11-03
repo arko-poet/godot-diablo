@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqqt7ofr831qv"
+path="res://.godot/imported/swing.wav-765f04cdaf9943d657ce614a89bd27ea.sample"
+
+[deps]
+
+source_file="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/swing.wav"
+dest_files=["res://.godot/imported/swing.wav-765f04cdaf9943d657ce614a89bd27ea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cq6d8lg04bj7r"
+path="res://.godot/imported/golum.wav-892b5fd5e08eb0ae1aee96ba0232e08d.sample"
+
+[deps]
+
+source_file="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/golum.wav"
+dest_files=["res://.godot/imported/golum.wav-892b5fd5e08eb0ae1aee96ba0232e08d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

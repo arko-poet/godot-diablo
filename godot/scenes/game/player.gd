@@ -39,6 +39,7 @@ const VECTOR_TO_DIRECTION := {
 }
 
 @export var entrance_speech: AudioStream
+@export var attack_swing: AudioStream
 
 var path: PackedVector2Array
 var target_position := position
@@ -98,6 +99,7 @@ func attack(target: Node2D) -> void:
 		
 	target_monster = target
 	_state = State.ATTACK
+	SfxController.play(attack_swing)
 
 
 func _update_animation() -> void:

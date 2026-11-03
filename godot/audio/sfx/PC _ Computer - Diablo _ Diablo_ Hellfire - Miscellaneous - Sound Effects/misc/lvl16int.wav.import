@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xwqqcupdyl4r"
+path="res://.godot/imported/lvl16int.wav-0e0ad5b040b4db8a10132c88d9b905d5.sample"
+
+[deps]
+
+source_file="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/lvl16int.wav"
+dest_files=["res://.godot/imported/lvl16int.wav-0e0ad5b040b4db8a10132c88d9b905d5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://ba6divtn6joy" path="res://scenes/game/player.gd" id="1_6w7gq"]
 [ext_resource type="Texture2D" uid="uid://dbynywaj2c6up" path="res://art/animations/character/warrior/light_armour_and_sword/idle.png" id="2_dd427"]
 [ext_resource type="Texture2D" uid="uid://dputbkb2kxg2j" path="res://art/animations/character/warrior/light_armour_and_sword/attack.png" id="2_nybob"]
+[ext_resource type="AudioStream" uid="uid://c4nmsftevwmii" path="res://audio/sfx/Diablo I Character Speech/Warrior/Wario97.wav" id="2_t8yk2"]
+[ext_resource type="AudioStream" uid="uid://coustnfl8ku3w" path="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/swing2.wav" id="3_m5ugi"]
 [ext_resource type="Texture2D" uid="uid://c3msj6ry7y4ig" path="res://art/animations/character/warrior/light_armour_and_sword/walk.png" id="3_u3rb4"]
+[ext_resource type="AudioStream" uid="uid://cqqt7ofr831qv" path="res://audio/sfx/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - Sound Effects/misc/swing.wav" id="4_3vq1g"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nybob"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("3_m5ugi")
+stream_1/stream = ExtResource("4_3vq1g")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgun3"]
 radius = 16.0
@@ -2050,6 +2059,8 @@ fill_to = Vector2(1, 0.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=704650882]
 script = ExtResource("1_6w7gq")
+entrance_speech = ExtResource("2_t8yk2")
+attack_swing = SubResource("AudioStreamRandomizer_nybob")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1561746489]
 offset = Vector2(0, 65)
