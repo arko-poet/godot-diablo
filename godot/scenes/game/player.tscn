@@ -1148,7 +1148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_er8sc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_E",
 "speed": 32.0
 }, {
@@ -1201,7 +1201,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aieor")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_N",
 "speed": 32.0
 }, {
@@ -1254,7 +1254,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xo68f")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_NE",
 "speed": 32.0
 }, {
@@ -1307,7 +1307,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qn405")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_NW",
 "speed": 32.0
 }, {
@@ -1360,7 +1360,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_14xdp")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_S",
 "speed": 32.0
 }, {
@@ -1413,7 +1413,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2umxq")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_SE",
 "speed": 32.0
 }, {
@@ -1466,7 +1466,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_be3mq")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_SW",
 "speed": 32.0
 }, {
@@ -1519,7 +1519,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_322qr")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ATTACK_W",
 "speed": 32.0
 }, {
@@ -2060,9 +2060,10 @@ shape = SubResource("CapsuleShape2D_vgun3")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=102573556]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_vgun3")
-animation = &"ATTACK_W"
+animation = &"ATTACK_E"
 autoplay = "IDLE_SE"
-frame_progress = 0.54722786
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1572975163]
 texture = SubResource("GradientTexture2D_vgun3")
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_finished"]

@@ -30,6 +30,13 @@ y_sort_enabled = true
 script = ExtResource("1_7qhhq")
 bgm = ExtResource("2_noi7s")
 
+[node name="Monsters" type="Node" parent="." unique_id=1344132737]
+unique_name_in_owner = true
+
+[node name="Fallen" parent="Monsters" unique_id=773512642 instance=ExtResource("7_qsdf0")]
+z_index = 1
+position = Vector2(-416, 160)
+
 [node name="Player" parent="." unique_id=704650882 instance=ExtResource("2_qgbr3")]
 unique_name_in_owner = true
 z_index = 1
@@ -68,10 +75,6 @@ tile_set = SubResource("TileSet_ilpah")
 unique_name_in_owner = true
 visible = false
 color = Color(0.06666667, 0.047058824, 0.023529412, 1)
-
-[node name="Fallen" parent="." unique_id=773512642 instance=ExtResource("7_qsdf0")]
-z_index = 1
-position = Vector2(-416, 160)
 
 [node name="PauseMenu" parent="." unique_id=2005489429 instance=ExtResource("7_ef7fl")]
 layer = 2
@@ -122,3 +125,5 @@ offset_right = 320.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("AtlasTexture_vgun3")
+
+[connection signal="hovered" from="Monsters/Fallen" to="." method="_on_monster_hovered"]

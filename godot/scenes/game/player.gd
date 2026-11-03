@@ -14,6 +14,7 @@ enum Direction {
 enum State {
 	IDLE,
 	WALK,
+	ATTACK
 }
 
 const WALK_DURATIONS := {
@@ -41,6 +42,7 @@ const VECTOR_TO_DIRECTION := {
 
 var path: PackedVector2Array
 var target_position := position
+var target_monster: Node2D
 var _direction := Direction.SE:
 	set(value):
 		_direction = value
@@ -90,5 +92,19 @@ func move() -> void:
 		_state = State.IDLE
 
 
+func attack(target: Node2D) -> void:
+	if _state != State.IDLE:
+		return
+		
+	target_monster = target
+	_state = State.ATTACK
+
+
 func _update_animation() -> void:
 	_animated_sprite.play("%s_%s" % [State.keys()[_state], Direction.keys()[_direction]])
+
+
+func _on_animated_sprite_animation_finished() -> void:
+	if _state == State.ATTACK:
+		target_monster.hit(0)
+		_state = State.IDLE
