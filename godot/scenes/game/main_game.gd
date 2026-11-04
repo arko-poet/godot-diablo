@@ -41,13 +41,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if hovered_target:
-				var monster_cell := pathing_layer.local_to_map(pathing_layer.get_local_mouse_position())# - Vector2i.ONE
+				var monster_cell := pathing_layer.local_to_map(hovered_target.position) - Vector2i(0, 1)
 				var player_cell := pathing_layer.local_to_map(player.target_position)
-				var path := astar.get_point_path(player_cell, monster_cell)
+				var path := astar.get_point_path(player_cell, monster_cell, true)
 				print(path)
 				if path.size() == 0:
 					return
-				elif path.size() == 2:
+				elif path.size() == 2 or path.size() == 1:
 					player.attack(hovered_target)
 				else:
 					path.remove_at(0)
@@ -81,7 +81,7 @@ func _setup_astar() -> void:
 
 func _initialise_monster_tiles() -> void:
 	for monster: Node2D in monsters.get_children():
-		var monster_tile := pathing_layer.local_to_map(pathing_layer.get_local_mouse_position()) - Vector2i.ONE
+		var monster_tile := pathing_layer.local_to_map(monster.position) - Vector2i(0, 1)
 		monster_tiles.append(monster_tile)
 		astar.set_point_solid(monster_tile)
 

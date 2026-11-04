@@ -1720,14 +1720,16 @@ script = ExtResource("1_p38ge")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1705601527]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_agngd")
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_rr46p")
 animation = &"DIE_W"
 autoplay = "IDLE_SE"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=868755421]
+position = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1214717045]
-position = Vector2(0, 16)
+position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_vgun3")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
