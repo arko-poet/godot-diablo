@@ -57,6 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				var target_cell := pathing_layer.local_to_map(pathing_layer.get_local_mouse_position()) - Vector2i.ONE
 				var player_cell := pathing_layer.local_to_map(player.target_position)
 				var path := astar.get_point_path(player_cell, target_cell)
+				print("move path = %s" % path)
 				if not path:
 					return
 				path.remove_at(0) # the first one is where player already is

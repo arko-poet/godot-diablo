@@ -97,6 +97,14 @@ func attack(target: Node2D) -> void:
 	if _state != State.IDLE:
 		return
 		
+	print("attack")
+	print("monster = %s" % Vector2i(target.position - Vector2(0, 32)))
+	print("player = %s" % (Vector2i(position - _sprite_offset)))
+	_direction = VECTOR_TO_DIRECTION[
+		Vector2i((Vector2i(target.position - Vector2(0, 16)) - Vector2i(position - _sprite_offset)).sign())
+	]
+	print(_direction)
+		
 	target_monster = target
 	_state = State.ATTACK
 	SfxController.play(attack_swing)
