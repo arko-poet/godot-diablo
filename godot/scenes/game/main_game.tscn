@@ -123,4 +123,5 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("AtlasTexture_vgun3")
 
+[connection signal="died" from="Monsters/Fallen" to="." method="_on_monster_died"]
 [connection signal="hovered" from="Monsters/Fallen" to="." method="_on_monster_hovered"]

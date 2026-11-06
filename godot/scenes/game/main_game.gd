@@ -89,3 +89,9 @@ func _initialise_monster_tiles() -> void:
 
 func _on_monster_hovered(monster_reference: Node2D) -> void:
 	hovered_target = monster_reference
+
+
+func _on_monster_died(monster_position: Vector2) -> void:
+	var monster_tile := pathing_layer.local_to_map(monster_position) - Vector2i(0, 1)
+	astar.set_point_solid(monster_tile, false)
+	monster_tiles.erase(monster_tile)

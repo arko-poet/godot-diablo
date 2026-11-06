@@ -1,6 +1,7 @@
 extends Node2D
 
-signal hovered(hover_reference: Node2D)
+signal hovered(monster: Node2D)
+signal died(position: Vector2)
 
 @onready var sprite: AnimatedSprite2D = %Sprite
 @onready var outline_shader: ShaderMaterial = sprite.material
@@ -23,4 +24,5 @@ func _on_area_2d_mouse_exited() -> void:
 func _die() -> void:
 	sprite.play("DIE_SE")
 	await sprite.animation_finished
+	died.emit(position)
 	queue_free()
