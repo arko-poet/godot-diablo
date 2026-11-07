@@ -52,12 +52,15 @@ func _focus() -> void:
 
 
 func _on_start_game_entered() -> void:
-	pentagrams.position.y = START_GAME_BUTTON_Y
+	if pentagrams:
+		pentagrams.position.y = START_GAME_BUTTON_Y
 
 
 func _on_options_entered() -> void:
-	pentagrams.position.y = OPTIONS_BUTTON_Y
+	if pentagrams:
+		pentagrams.position.y = OPTIONS_BUTTON_Y
 
 
 func _on_credits_entered() -> void:
-	pentagrams.position.y = CREDITS_BUTTON_Y
+	if pentagrams:
+		pentagrams.position.y = CREDITS_BUTTON_Y
