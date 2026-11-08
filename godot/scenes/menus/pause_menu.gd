@@ -5,6 +5,7 @@ const ConfirmationPanelScene := preload("res://scenes/ui_components/confirmation
 @export var options_menu_scene: PackedScene
 
 @onready var options_button: Button = %OptionsButton
+@onready var ui: Control = %UI
 
 
 func _ready() -> void:
@@ -27,8 +28,9 @@ func toggle_pause() -> void:
 
 
 func _on_options_button_pressed() -> void:
-	var options_menu := options_menu_scene.instantiate()
-	add_child(options_menu)
+	var options_menu = options_menu_scene.instantiate()
+	options_menu.tree_exited.connect(_on_options_menu_tree_exited)
+	ui.add_child(options_menu)
 
 
 func _on_resume_button_pressed() -> void:
@@ -62,3 +64,7 @@ func _on_exit_confirmed(accepted: bool) -> void:
 
 func _on_restart_button_pressed() -> void:
 	SceneLoader.restart()
+
+
+func _on_options_menu_tree_exited() -> void:
+	toggle_pause()
