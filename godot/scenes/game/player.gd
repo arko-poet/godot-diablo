@@ -115,6 +115,6 @@ func _update_animation() -> void:
 
 
 func _on_animated_sprite_animation_finished() -> void:
-	if _state == State.ATTACK:
+	if _state == State.ATTACK and target_monster:
 		target_monster.hit(0)
 		_state = State.IDLE
