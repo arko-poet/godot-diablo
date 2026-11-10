@@ -14,7 +14,7 @@ enum Direction {
 enum State {
 	IDLE,
 	WALK,
-	ATTACK
+	ATTACK,
 }
 
 const WALK_DURATIONS := {
@@ -37,6 +37,7 @@ const VECTOR_TO_DIRECTION := {
 	Vector2i(1, 0): Direction.NE,
 	Vector2i(1, 1): Direction.E,
 }
+const ATTACK_ANIMATION_FRAME := 10
 
 @export var entrance_speech: AudioStream
 @export var attack_swing: AudioStream
@@ -69,7 +70,7 @@ func _process(_delta: float) -> void:
 func move() -> void:
 	target_position = path[0]
 	path.remove_at(0)
-	
+
 	if target_position == (position - _sprite_offset):
 		return
 
@@ -96,15 +97,19 @@ func move() -> void:
 func attack(target: Node2D) -> void:
 	if _state != State.IDLE:
 		return
-		
+
 	print("attack")
 	print("monster = %s" % Vector2i(target.position - Vector2(0, 32)))
 	print("player = %s" % (Vector2i(position - _sprite_offset)))
 	_direction = VECTOR_TO_DIRECTION[
-		Vector2i((Vector2i(target.position - Vector2(0, 16)) - Vector2i(position - _sprite_offset)).sign())
+		Vector2i(
+			(
+				Vector2i(target.position - Vector2(0, 16)) - Vector2i(position - _sprite_offset)
+			).sign()
+		)
 	]
 	print(_direction)
-		
+
 	target_monster = target
 	_state = State.ATTACK
 	SfxController.play(attack_swing)
@@ -115,6 +120,13 @@ func _update_animation() -> void:
 
 
 func _on_animated_sprite_animation_finished() -> void:
-	if _state == State.ATTACK and target_monster:
-		target_monster.hit(0)
+	if _state == State.ATTACK:
 		_state = State.IDLE
+
+
+func _on_animated_sprite_frame_changed() -> void:
+	if (
+		_state == State.ATTACK and target_monster
+		and _animated_sprite.frame == ATTACK_ANIMATION_FRAME
+	):
+		target_monster.hit(0)

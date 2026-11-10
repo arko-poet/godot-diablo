@@ -2073,8 +2073,11 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_vgun3")
 animation = &"ATTACK_E"
 autoplay = "IDLE_SE"
+frame = 15
+frame_progress = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1572975163]
 texture = SubResource("GradientTexture2D_vgun3")
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_animated_sprite_frame_changed"]
