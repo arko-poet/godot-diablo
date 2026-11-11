@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://blpmu6wnj0dqx"]
+
+[ext_resource type="Script" uid="uid://b4vo2ay1qiyer" path="res://scenes/game/moving_character.gd" id="1_4bunk"]
+
+[node name="MovingCharacter" type="AnimatedSprite2D" unique_id=1733676709]
+script = ExtResource("1_4bunk")
+walk_durations = Dictionary[int, float]({
+0: 0.2,
+1: 0.4,
+2: 0.2,
+3: 0.2,
+4: 0.2,
+5: 0.4,
+6: 0.2,
+7: 0.2
+})
+attack_animation_hit_frame = 10
