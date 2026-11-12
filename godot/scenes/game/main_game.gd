@@ -28,6 +28,8 @@ func _ready() -> void:
 	_initialise_monster_tiles()
 
 	canvas_modulate.show()
+	
+	player.died.connect(_on_player_died)
 
 
 func _process(_delta: float) -> void:
@@ -95,3 +97,11 @@ func _on_monster_died(monster_position: Vector2) -> void:
 	var monster_tile := pathing_layer.local_to_map(monster_position) - Vector2i(0, 1)
 	astar.set_point_solid(monster_tile, false)
 	monster_tiles.erase(monster_tile)
+
+
+func _on_player_died() -> void:
+	GameController.lose_game()
+
+
+func _on_kill_player_button_pressed() -> void:
+	player.hit(666)

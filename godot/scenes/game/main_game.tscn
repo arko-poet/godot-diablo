@@ -124,5 +124,19 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("AtlasTexture_vgun3")
 
+[node name="DebugButtons" type="VBoxContainer" parent="UILayer/UIRoot" unique_id=865888327]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="KillPlayerButton" type="Button" parent="UILayer/UIRoot/DebugButtons" unique_id=1900116145]
+layout_mode = 2
+text = "KILL"
+
 [connection signal="died" from="Monsters/Fallen" to="." method="_on_monster_died"]
 [connection signal="hovered" from="Monsters/Fallen" to="." method="_on_monster_hovered"]
+[connection signal="pressed" from="UILayer/UIRoot/DebugButtons/KillPlayerButton" to="." method="_on_kill_player_button_pressed"]

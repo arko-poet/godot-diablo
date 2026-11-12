@@ -23,7 +23,8 @@ script = ExtResource("1_6w7gq")
 unique_name_in_owner = true
 position = Vector2(0, -16)
 sprite_frames = ExtResource("5_68xwl")
-animation = &"ATTACK_E"
+animation = &"DIE_W"
+autoplay = "IDLE_SE"
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1561746489]
 offset = Vector2(0, 65)

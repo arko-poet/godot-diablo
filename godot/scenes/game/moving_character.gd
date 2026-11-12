@@ -1,6 +1,8 @@
 class_name MovingCharacter
 extends AnimatedSprite2D
 
+signal died
+
 enum Direction {
 	S,
 	SW,
@@ -16,6 +18,7 @@ enum State {
 	IDLE,
 	WALK,
 	ATTACK,
+	DIE
 }
 
 const VECTOR_TO_DIRECTION := {
@@ -78,6 +81,13 @@ func move() -> void:
 		_state = State.IDLE
 
 
+func hit(damge: int) -> void:
+	_die()
+
+func _die() -> void:
+	_state = State.DIE
+
+
 func attack(target: Node2D) -> void:
 	if _state != State.IDLE:
 		return
@@ -100,6 +110,7 @@ func _on_frame_changed() -> void:
 
 
 func _on_animation_finished() -> void:
-	print("finished")
 	if _state == State.ATTACK:
 		_state = State.IDLE
+	if _state == State.DIE:
+		died.emit()
