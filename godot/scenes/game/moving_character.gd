@@ -1,3 +1,4 @@
+class_name MovingCharacter
 extends AnimatedSprite2D
 
 enum Direction {
@@ -64,10 +65,10 @@ func move() -> void:
 	if target_position == position:
 		return
 
-	_direction = VECTOR_TO_DIRECTION[Vector2i((target_position - (position)).sign())]
+	_direction = VECTOR_TO_DIRECTION[Vector2i((target_position - (parent.position)).sign())]
 
 	var tween = create_tween()
-	tween.tween_property(self, ^"position", target_position, walk_durations[_direction])
+	tween.tween_property(parent, ^"position", target_position, walk_durations[_direction])
 	_state = State.WALK
 
 	await tween.finished
@@ -93,14 +94,12 @@ func _update_animation() -> void:
 	play("%s_%s" % [State.keys()[_state], Direction.keys()[_direction]])
 
 
-func _on_animated_sprite_animation_finished() -> void:
+func _on_frame_changed() -> void:
+	if (_state == State.ATTACK and target_character and frame == attack_animation_hit_frame):
+		target_character.hit(0)
+
+
+func _on_animation_finished() -> void:
+	print("finished")
 	if _state == State.ATTACK:
 		_state = State.IDLE
-
-
-func _on_animated_sprite_frame_changed() -> void:
-	if (
-		_state == State.ATTACK and target_character
-		and frame == attack_animation_hit_frame
-	):
-		target_character.hit(0)

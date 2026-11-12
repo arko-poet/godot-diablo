@@ -6,7 +6,7 @@ var astar := AStarGrid2D.new()
 var monster_tiles: Array[Vector2i]
 var hovered_target: Node2D
 
-@onready var player: CharacterBody2D = %Player
+@onready var player: MovingCharacter = %Player.moving_character
 @onready var floor_layer: TileMapLayer = %FloorLayer
 @onready var obstacle_layer: TileMapLayer = %ObstacleLayer
 @onready var pathing_layer: TileMapLayer = %PathingLayer
