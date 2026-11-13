@@ -29,7 +29,7 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_xbsf3")
 position = Vector2(0, -32)
 sprite_frames = ExtResource("3_p38ge")
-animation = &"DIE_E"
+animation = &"ATTACK_E"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
