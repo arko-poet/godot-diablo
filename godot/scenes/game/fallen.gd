@@ -3,12 +3,12 @@ extends Node2D
 signal hovered(monster: Node2D)
 signal died(position: Vector2)
 
-@onready var sprite: AnimatedSprite2D = %Sprite
-@onready var outline_shader: ShaderMaterial = sprite.material
+@onready var moving_character: MovingCharacter = %MovingCharacter
+@onready var outline_shader: ShaderMaterial = moving_character.material
 
 
-func hit(damge: int) -> void:
-	_die()
+func hit(damage: int) -> void:
+	moving_character.hit(damage)
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -21,8 +21,6 @@ func _on_area_2d_mouse_exited() -> void:
 	hovered.emit(null)
 
 
-func _die() -> void:
-	sprite.play("DIE_SE")
-	await sprite.animation_finished
+func _on_moving_character_died() -> void:
 	died.emit(position)
 	queue_free()

@@ -110,7 +110,9 @@ func _on_frame_changed() -> void:
 
 
 func _on_animation_finished() -> void:
+	print("state %s " % _state)
 	if _state == State.ATTACK:
 		_state = State.IDLE
 	if _state == State.DIE:
+		print("died")
 		died.emit()
