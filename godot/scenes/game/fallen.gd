@@ -7,8 +7,8 @@ signal died(position: Vector2)
 @onready var outline_shader: ShaderMaterial = moving_character.material
 
 
-func hit(damage: int) -> void:
-	moving_character.hit(damage)
+func hit(_damage: int) -> void:
+	moving_character.act(MovingCharacter.State.DIE)
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -21,6 +21,6 @@ func _on_area_2d_mouse_exited() -> void:
 	hovered.emit(null)
 
 
-func _on_moving_character_died() -> void:
+func _on_die_animation_finished() -> void:
 	died.emit(position)
 	queue_free()
