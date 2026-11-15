@@ -29,7 +29,9 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_xbsf3")
 position = Vector2(0, -32)
 sprite_frames = ExtResource("3_p38ge")
-animation = &"WALK_N"
+animation = &"IDLE_SE"
+autoplay = "IDLE_SE"
+frame_progress = 0.16294427
 
 [connection signal="mouse_entered" from="MouseHoverArea" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="MouseHoverArea" to="." method="_on_area_2d_mouse_exited"]
