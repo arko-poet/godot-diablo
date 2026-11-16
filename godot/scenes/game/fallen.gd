@@ -10,7 +10,7 @@ signal died(position: Vector2)
 func hit(_damage: int) -> void:
 	moving_character.act(MovingCharacter.State.DIE)
 
-
+ 
 func _on_area_2d_mouse_entered() -> void:
 	outline_shader.set_shader_parameter(&"enabled", true)
 	hovered.emit(self)
