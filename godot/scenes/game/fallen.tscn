@@ -3,7 +3,14 @@
 [ext_resource type="Shader" uid="uid://cp0k5xl402u7j" path="res://shaders/outline.gdshader" id="1_7jotn"]
 [ext_resource type="Script" uid="uid://cwoeetocowvqj" path="res://scenes/game/fallen.gd" id="1_p38ge"]
 [ext_resource type="PackedScene" uid="uid://blpmu6wnj0dqx" path="res://scenes/game/moving_character.tscn" id="2_p38ge"]
+[ext_resource type="AudioStream" uid="uid://byicqjd5mtxav" path="res://audio/sfx/monsters/falld1.wav" id="2_p58er"]
+[ext_resource type="AudioStream" uid="uid://b74suynm45lyt" path="res://audio/sfx/monsters/falld2.wav" id="3_kl2aw"]
 [ext_resource type="SpriteFrames" uid="uid://b1kl4ae8ty3hv" path="res://resources/sprite_frames/fallen_frames.tres" id="3_p38ge"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xbsf3"]
+streams_count = 2
+stream_0/stream = ExtResource("2_p58er")
+stream_1/stream = ExtResource("3_kl2aw")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgun3"]
 radius = 16.0
@@ -16,6 +23,7 @@ shader_parameter/enabled = false
 
 [node name="Fallen" type="Node2D" unique_id=773512642]
 script = ExtResource("1_p38ge")
+death_sound = SubResource("AudioStreamRandomizer_xbsf3")
 
 [node name="MouseHoverArea" type="Area2D" parent="." unique_id=868755421]
 position = Vector2(0, -32)

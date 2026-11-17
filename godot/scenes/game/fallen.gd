@@ -6,9 +6,12 @@ signal died(position: Vector2)
 @onready var moving_character: MovingCharacter = %MovingCharacter
 @onready var outline_shader: ShaderMaterial = moving_character.material
 
+@export var death_sound: AudioStream
+
 
 func hit(_damage: int) -> void:
 	moving_character.act(MovingCharacter.State.DIE)
+	SfxController.play(death_sound)
 
  
 func _on_area_2d_mouse_entered() -> void:
