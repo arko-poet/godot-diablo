@@ -1,4 +1,5 @@
-extends AnimatedSprite2D
+class_name Character
+extends Node2D
 
 signal died
 
@@ -33,11 +34,13 @@ const VECTOR_TO_DIRECTION := {
 
 @export var walk_durations: Dictionary[Direction, float]
 @export var attack_animation_hit_frame: int
+@export var sprite_frames: SpriteFrames
+@export var sprite_offset: Vector2
+@onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
 var path: PackedVector2Array
 var target_position := position
 var target_character: Node2D
-var parent: Node2D
 var _direction := Direction.SE:
 	set(value):
 		_direction = value
@@ -49,10 +52,8 @@ var _state := State.IDLE:
 
 
 func _ready() -> void:
-	var local_parent = get_parent()
-	assert(local_parent, "Missing Parent Node")
-	assert(local_parent is Node2D, "Parent is not Node2D")
-	parent = local_parent
+	animated_sprite.sprite_frames = sprite_frames
+	animated_sprite.position = sprite_offset
 
 
 func _process(_delta: float) -> void:
@@ -73,10 +74,10 @@ func move() -> void:
 	if target_position == position:
 		return
 
-	_direction = VECTOR_TO_DIRECTION[Vector2i((target_position - (parent.position)).sign())]
+	_direction = VECTOR_TO_DIRECTION[Vector2i((target_position - position).sign())]
 
 	var tween = create_tween()
-	tween.tween_property(parent, ^"position", target_position, walk_durations[_direction])
+	tween.tween_property(self, ^"position", target_position, walk_durations[_direction])
 	_state = State.WALK
 
 	await tween.finished
@@ -105,11 +106,11 @@ func attack(target: Node2D) -> void:
 
 
 func _update_animation() -> void:
-	play("%s_%s" % [State.keys()[_state], Direction.keys()[_direction]])
+	animated_sprite.play("%s_%s" % [State.keys()[_state], Direction.keys()[_direction]])
 
 
 func _on_frame_changed() -> void:
-	if (_state == State.ATTACK and target_character and frame == attack_animation_hit_frame):
+	if (_state == State.ATTACK and target_character and animated_sprite.frame == attack_animation_hit_frame):
 		target_character.hit(0)
 
 

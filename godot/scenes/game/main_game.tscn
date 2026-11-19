@@ -2,12 +2,25 @@
 
 [ext_resource type="Script" uid="uid://b38qpnba081hg" path="res://scenes/game/main_game.gd" id="1_7qhhq"]
 [ext_resource type="AudioStream" uid="uid://3lluxrfw2b5a" path="res://audio/music/dlvla.mp3" id="2_noi7s"]
-[ext_resource type="PackedScene" uid="uid://yv36q5ja66t7" path="res://scenes/game/player.tscn" id="2_qgbr3"]
+[ext_resource type="PackedScene" uid="uid://6vjnlusijiqw" path="res://scenes/game/character.tscn" id="3_11nld"]
 [ext_resource type="TileSet" uid="uid://kayrp3uxul0y" path="res://resources/tile_sets/tile_set.tres" id="3_ef7fl"]
 [ext_resource type="Texture2D" uid="uid://dtvqtcqsp5lio" path="res://art/tiles/markers/marker.png" id="4_11nld"]
+[ext_resource type="SpriteFrames" uid="uid://beniwhjk8toqy" path="res://resources/sprite_frames/player_frames.tres" id="4_qsdf0"]
 [ext_resource type="Texture2D" uid="uid://2m3amnlkju7p" path="res://art/hud/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - HUD.png" id="6_rpywg"]
 [ext_resource type="PackedScene" uid="uid://brt4e2uh753mt" path="res://scenes/menus/pause_menu.tscn" id="7_ef7fl"]
 [ext_resource type="PackedScene" uid="uid://b0tit4wujvs03" path="res://scenes/game/fallen.tscn" id="7_qsdf0"]
+
+[sub_resource type="Gradient" id="Gradient_nybob"]
+offsets = PackedFloat32Array(0, 0.6586103)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_11nld"]
+gradient = SubResource("Gradient_nybob")
+width = 640
+height = 480
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsdf0"]
 texture = ExtResource("4_11nld")
@@ -29,17 +42,36 @@ y_sort_enabled = true
 script = ExtResource("1_7qhhq")
 bgm = ExtResource("2_noi7s")
 
+[node name="Player" parent="." unique_id=1563933497 instance=ExtResource("3_11nld")]
+unique_name_in_owner = true
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-32, 32)
+walk_durations = Dictionary[int, float]({
+0: 0.2,
+1: 0.4,
+2: 0.2,
+3: 0.2,
+4: 0.2,
+5: 0.4,
+6: 0.2,
+7: 0.2
+})
+sprite_frames = ExtResource("4_qsdf0")
+sprite_offset = Vector2(0, -16)
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1943653516]
+offset = Vector2(0, 65)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1738590230]
+texture = SubResource("GradientTexture2D_11nld")
+
 [node name="Monsters" type="Node" parent="." unique_id=1344132737]
 unique_name_in_owner = true
 
 [node name="Fallen" parent="Monsters" unique_id=773512642 instance=ExtResource("7_qsdf0")]
 z_index = 1
 position = Vector2(-416, 160)
-
-[node name="Player" parent="." unique_id=704650882 instance=ExtResource("2_qgbr3")]
-unique_name_in_owner = true
-z_index = 1
-position = Vector2(0, 16)
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=519143164]
 y_sort_enabled = true
