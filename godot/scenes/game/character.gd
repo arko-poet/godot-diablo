@@ -52,7 +52,8 @@ var _state := State.IDLE:
 
 
 func _ready() -> void:
-	animated_sprite.sprite_frames = sprite_frames
+	if sprite_frames:
+		animated_sprite.sprite_frames = sprite_frames
 	animated_sprite.position = sprite_offset
 
 
@@ -86,6 +87,10 @@ func move() -> void:
 	else:
 		_state = State.IDLE
 
+func hit(_damage: int) -> void:
+	_state = State.DIE
+	#SfxController.play(death_sound)
+	_die()
 
 
 

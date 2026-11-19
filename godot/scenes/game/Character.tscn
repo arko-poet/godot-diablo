@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6vjnlusijiqw"]
 
 [ext_resource type="Script" uid="uid://c2t0wwhcj5v3k" path="res://scenes/game/character.gd" id="1_qhwh2"]
+[ext_resource type="SpriteFrames" uid="uid://beniwhjk8toqy" path="res://resources/sprite_frames/player_frames.tres" id="2_c0ynf"]
 
 [node name="Character" type="Node2D" unique_id=1563933497]
 script = ExtResource("1_qhwh2")
@@ -8,6 +9,9 @@ attack_animation_hit_frame = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=2035798934]
 unique_name_in_owner = true
+sprite_frames = ExtResource("2_c0ynf")
+animation = &"IDLE_SE"
+autoplay = "IDLE_SE"
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_frame_changed"]

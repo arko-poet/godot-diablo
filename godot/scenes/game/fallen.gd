@@ -23,7 +23,7 @@ func _on_area_2d_mouse_exited() -> void:
 	outline_shader.set_shader_parameter(&"enabled", false)
 	hovered.emit(null)
 
-
-func _on_die_animation_finished() -> void:
-	died.emit(position)
-	queue_free()
+#
+#func _on_die_animation_finished() -> void:
+	#died.emit(position)
+	#queue_free()

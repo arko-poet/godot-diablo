@@ -6,9 +6,9 @@
 [ext_resource type="TileSet" uid="uid://kayrp3uxul0y" path="res://resources/tile_sets/tile_set.tres" id="3_ef7fl"]
 [ext_resource type="Texture2D" uid="uid://dtvqtcqsp5lio" path="res://art/tiles/markers/marker.png" id="4_11nld"]
 [ext_resource type="SpriteFrames" uid="uid://beniwhjk8toqy" path="res://resources/sprite_frames/player_frames.tres" id="4_qsdf0"]
+[ext_resource type="PackedScene" uid="uid://cfva5va3e1qqu" path="res://scenes/game/monster.tscn" id="5_qsdf0"]
 [ext_resource type="Texture2D" uid="uid://2m3amnlkju7p" path="res://art/hud/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - HUD.png" id="6_rpywg"]
 [ext_resource type="PackedScene" uid="uid://brt4e2uh753mt" path="res://scenes/menus/pause_menu.tscn" id="7_ef7fl"]
-[ext_resource type="PackedScene" uid="uid://b0tit4wujvs03" path="res://scenes/game/fallen.tscn" id="7_qsdf0"]
 
 [sub_resource type="Gradient" id="Gradient_nybob"]
 offsets = PackedFloat32Array(0, 0.6586103)
@@ -69,9 +69,8 @@ texture = SubResource("GradientTexture2D_11nld")
 [node name="Monsters" type="Node" parent="." unique_id=1344132737]
 unique_name_in_owner = true
 
-[node name="Fallen" parent="Monsters" unique_id=773512642 instance=ExtResource("7_qsdf0")]
-z_index = 1
-position = Vector2(-416, 160)
+[node name="Monster" parent="Monsters" unique_id=89642833 instance=ExtResource("5_qsdf0")]
+position = Vector2(-256, 48)
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=519143164]
 y_sort_enabled = true
@@ -169,6 +168,5 @@ grow_horizontal = 0
 layout_mode = 2
 text = "KILL"
 
-[connection signal="died" from="Monsters/Fallen" to="." method="_on_monster_died"]
-[connection signal="hovered" from="Monsters/Fallen" to="." method="_on_monster_hovered"]
+[connection signal="hovered" from="Monsters/Monster" to="." method="_on_monster_hovered"]
 [connection signal="pressed" from="UILayer/UIRoot/DebugButtons/KillPlayerButton" to="." method="_on_kill_player_button_pressed"]
