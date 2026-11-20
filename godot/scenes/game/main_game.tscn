@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dtvqtcqsp5lio" path="res://art/tiles/markers/marker.png" id="4_11nld"]
 [ext_resource type="SpriteFrames" uid="uid://beniwhjk8toqy" path="res://resources/sprite_frames/player_frames.tres" id="4_qsdf0"]
 [ext_resource type="PackedScene" uid="uid://cfva5va3e1qqu" path="res://scenes/game/monster.tscn" id="5_qsdf0"]
+[ext_resource type="AudioStream" uid="uid://byicqjd5mtxav" path="res://audio/sfx/monsters/falld1.wav" id="6_i2osx"]
 [ext_resource type="Texture2D" uid="uid://2m3amnlkju7p" path="res://art/hud/PC _ Computer - Diablo _ Diablo_ Hellfire - Miscellaneous - HUD.png" id="6_rpywg"]
 [ext_resource type="PackedScene" uid="uid://brt4e2uh753mt" path="res://scenes/menus/pause_menu.tscn" id="7_ef7fl"]
+[ext_resource type="AudioStream" uid="uid://b74suynm45lyt" path="res://audio/sfx/monsters/falld2.wav" id="7_vde2q"]
 
 [sub_resource type="Gradient" id="Gradient_nybob"]
 offsets = PackedFloat32Array(0, 0.6586103)
@@ -21,6 +23,11 @@ height = 480
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_25xmc"]
+streams_count = 2
+stream_0/stream = ExtResource("6_i2osx")
+stream_1/stream = ExtResource("7_vde2q")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsdf0"]
 texture = ExtResource("4_11nld")
@@ -69,8 +76,9 @@ texture = SubResource("GradientTexture2D_11nld")
 [node name="Monsters" type="Node" parent="." unique_id=1344132737]
 unique_name_in_owner = true
 
-[node name="Monster" parent="Monsters" unique_id=89642833 instance=ExtResource("5_qsdf0")]
+[node name="Fallen" parent="Monsters" unique_id=89642833 instance=ExtResource("5_qsdf0")]
 position = Vector2(-256, 48)
+death_sound = SubResource("AudioStreamRandomizer_25xmc")
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=519143164]
 y_sort_enabled = true
@@ -168,5 +176,5 @@ grow_horizontal = 0
 layout_mode = 2
 text = "KILL"
 
-[connection signal="hovered" from="Monsters/Monster" to="." method="_on_monster_hovered"]
+[connection signal="hovered" from="Monsters/Fallen" to="." method="_on_monster_hovered"]
 [connection signal="pressed" from="UILayer/UIRoot/DebugButtons/KillPlayerButton" to="." method="_on_kill_player_button_pressed"]

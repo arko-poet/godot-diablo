@@ -18,7 +18,7 @@ enum State {
 	IDLE,
 	WALK,
 	ATTACK,
-	DIE
+	DIE,
 }
 
 const VECTOR_TO_DIRECTION := {
@@ -36,7 +36,7 @@ const VECTOR_TO_DIRECTION := {
 @export var attack_animation_hit_frame: int
 @export var sprite_frames: SpriteFrames
 @export var sprite_offset: Vector2
-@onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
+@export var death_sound: AudioStream
 
 var path: PackedVector2Array
 var target_position := position
@@ -49,6 +49,8 @@ var _state := State.IDLE:
 	set(value):
 		_state = value
 		_update_animation()
+
+@onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 
 
 func _ready() -> void:
@@ -87,15 +89,11 @@ func move() -> void:
 	else:
 		_state = State.IDLE
 
+
 func hit(_damage: int) -> void:
 	_state = State.DIE
 	#SfxController.play(death_sound)
 	_die()
-
-
-
-func _die() -> void:
-	_state = State.DIE
 
 
 func attack(target: Node2D) -> void:
@@ -110,12 +108,20 @@ func attack(target: Node2D) -> void:
 	_state = State.ATTACK
 
 
+func _die() -> void:
+	_state = State.DIE
+	SfxController.play(death_sound)
+
+
 func _update_animation() -> void:
 	animated_sprite.play("%s_%s" % [State.keys()[_state], Direction.keys()[_direction]])
 
 
 func _on_frame_changed() -> void:
-	if (_state == State.ATTACK and target_character and animated_sprite.frame == attack_animation_hit_frame):
+	if (
+		_state == State.ATTACK and target_character
+		and animated_sprite.frame == attack_animation_hit_frame
+	):
 		target_character.hit(0)
 
 
