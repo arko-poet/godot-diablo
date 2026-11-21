@@ -64,12 +64,6 @@ func _process(_delta: float) -> void:
 		move()
 
 
-func act(intended_state: MovingCharacter.State) -> void:
-	match intended_state:
-		State.DIE:
-			_die()
-
-
 func move() -> void:
 	target_position = path[0]
 	path.remove_at(0)
